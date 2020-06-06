@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: sms-server
+server:
+  port: 8001
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8765/eureka
+  instance:
+    preferIpAddress: true
