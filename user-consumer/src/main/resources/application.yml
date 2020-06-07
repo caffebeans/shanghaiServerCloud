@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: user-provider
+server:
+  port: 8006
+eureka:
+  client:
+#    healthcheck:
+#      enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8765/eureka
+  instance:
+    preferIpAddress: true

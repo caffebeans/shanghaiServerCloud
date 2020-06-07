@@ -11,6 +11,6 @@ public class MessageController {
     @RequestMapping("sendmessage")
     String sendMessage(){
 
-        return "this is send message api";
+        return "sms2";
     }
 }
