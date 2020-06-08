@@ -11,6 +11,9 @@ public class MessageController {
     @RequestMapping("sendmessage")
     String sendMessage(){
 
+        System.out.println("this is send message1 api");
         return "sms2";
     }
+
+
 }

@@ -3,10 +3,11 @@ package com.fjut.controller;
 import com.fjut.server.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.ws.rs.GET;
+import java.util.HashMap;
+import java.util.Map;
 
 @Controller
 public class MainController {
@@ -16,10 +17,11 @@ public class MainController {
 
     @GetMapping("/list")
     @ResponseBody
-    String list(){
+    String list(@RequestParam Map map){
         System.out.println("-----");
         System.out.println("this is user-consumer list interface");
-        String res=service.list();
+        System.out.println(map.size());
+        String res=service.list(map);
         return res;
     }
 

@@ -1,17 +1,19 @@
 package com.fjut.controller;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import sun.jvm.hotspot.tools.SysPropsDumper;
+
+import java.util.Map;
 
 @Controller
 public class UserController {
 
-  @GetMapping("list")
+  @PostMapping("list")
   @ResponseBody
-  String list(){
+  String list(@RequestParam Map map){
       System.out.println("this is user-provice list interface");
+      System.out.println(map.get("id"));
       return "user-provider";
   }
 

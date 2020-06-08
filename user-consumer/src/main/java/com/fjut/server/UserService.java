@@ -2,16 +2,17 @@ package com.fjut.server;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-@FeignClient(name = "user-provider",url = "http://localhost:8005")
+import java.util.Map;
+
+@FeignClient(name = "user-provider",fallback = HystrixTest.class)
 public interface UserService {
 
 
-      @GetMapping("/list")
+      @PostMapping("/list")
       @ResponseBody
-      String list();
+      String list(@RequestParam Map map);
 
 
 }
